@@ -1,0 +1,51 @@
+{% block content %}
+<div class="container">
+  <!-- Inventory Section -->
+  <div id="inventory-section">
+    <h2>Inventory Management</h2>
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <form id="add-item-form">
+          <div class="mb-3">
+            <label class="form-label">Item Name</label>
+            <input type="text" class="form-control" id="item-name" required />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Price</label>
+            <input
+              type="number"
+              class="form-control"
+              id="item-price"
+              step="0.01"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Quantity</label>
+            <input
+              type="number"
+              class="form-control"
+              id="item-quantity"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Add Item</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="inventory-table"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</div>

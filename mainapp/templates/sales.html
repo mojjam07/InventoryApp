@@ -1,0 +1,86 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<!-- Sales Section -->
+<div id="sales-section" style="display: none">
+    <h2>New Sale</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <form id="sale-form">
+          <div class="mb-3">
+            <label class="form-label">Select Item</label>
+            <select class="form-control" id="sale-item" required></select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Quantity</label>
+            <input
+              type="number"
+              class="form-control"
+              id="sale-quantity"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">
+            Add to Cart
+          </button>
+        </form>
+        <div class="mt-4">
+          <h4>Current Cart</h4>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody id="cart-items"></tbody>
+            <tfoot>
+              <tr>
+                <td colspan="3"><strong>Total:</strong></td>
+                <td id="cart-total">$0.00</td>
+              </tr>
+            </tfoot>
+          </table>
+          <button class="btn btn-success" onclick="completeSale()">
+            Complete Sale
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reports Section -->
+  <div id="reports-section" style="display: none">
+    <h2>Reports</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Daily Sales</h5>
+            <canvas id="dailyChart"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Weekly Sales</h5>
+            <canvas id="weeklyChart"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Monthly Sales</h5>
+            <canvas id="monthlyChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}
